@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/creative-cranels/smart-search/config"
+	"github.com/creative-cranels/smart-search/configs"
 	"github.com/creative-cranels/smart-search/internal/server"
 	"github.com/joho/godotenv"
 	"github.com/sethvargo/go-envconfig"
@@ -34,7 +34,7 @@ var startCmd = &cobra.Command{
 			log.Fatal("Error loading .env file:", err)
 		}
 
-		var cfg config.Config
+		var cfg configs.Config
 		if err := envconfig.Process(cmd.Context(), &cfg); err != nil {
 			log.Fatal("Error processing envconfig:", err)
 		}
